@@ -39,12 +39,33 @@ The data flows through three main stages as shown in the diagram below:
 ## 📂 Repository Structure
 ```text
 data-warehouse-project/
-├── datasets/            # Raw CSV files (ERP and CRM data)
-├── scripts/             # Python ETL scripts
-│   ├── bronze/          # Ingestion logic
-│   ├── silver/          # Cleaning & Transformation
-│   └── gold/            # Final Data Modeling
-├── tests/               # Quality Check scripts
-├── docs/                # Architecture diagrams and data catalog
-├── README.md            # Project documentation
-└── requirements.txt     # Python dependencies
+│
+├── datasets/                           # Raw datasets (ERP and CRM CSV files)
+│
+├── docs/                               # Project documentation and architecture details
+│   ├── data_architecture.png           # Architecture diagram (Medallion Layers)
+│   ├── data_catalog.md                 # Metadata and field descriptions
+│   └── naming_conventions.md           # Naming guidelines for variables and tables
+│
+├── scripts/                            # Python ETL Pipeline
+│   ├── load_bronze.py                  # Script for raw data ingestion to SQL
+│   ├── load_silver.py                  # Script for data cleaning & transformation
+│   └── load_gold.py                    # Script for Star Schema modeling (Facts & Dims)
+│
+├── tests/                              # Data Quality & Validation scripts
+│   └── quality_checks.py               # Python tests for nulls, duplicates & integrity
+│
+├── README.md                           # Project overview and instructions
+├── LICENSE                             # MIT License information
+└── requirements.txt                    # Python dependencies (Pandas, SQLAlchemy, etc.)
+```
+
+---
+## 🛡️ License
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
+
+---
+
+## About Me
+Hi there! I'm **[Abdulrahman Ayman Farag]**, a Data Engineer/Analyst passionate about turning raw data into meaningful stories. 
+Feel free to connect with me on [[LinkedIn](https://www.linkedin.com/in/abdelrhman-ayman-45b854361?utm_source=share_via&utm_content=profile&utm_medium=member_android)] or check my other projects!
